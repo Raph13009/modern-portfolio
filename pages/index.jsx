@@ -20,8 +20,8 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            Driving Innovation With <br />{" "}
+            <span className="text-accent">Clarity, Structure & Speed</span>
           </motion.h1>
 
           {/* subtitle */}
@@ -32,10 +32,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            I help companies and founders make smarter decisions, build stronger
+            products, and execute fast in a world driven by technology.
           </motion.p>
 
           {/* btn */}

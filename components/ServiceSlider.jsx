@@ -1,9 +1,10 @@
 import {
-  RxCrop,
+  RxRocket,
   RxPencil2,
   RxDesktop,
-  RxReader,
-  RxRocket,
+  RxMixerHorizontal,
+  RxMagnifyingGlass,
+  RxBarChart,
   RxArrowTopRight,
 } from "react-icons/rx";
 import { FreeMode, Pagination } from "swiper";
@@ -15,29 +16,34 @@ import "swiper/css/pagination";
 
 const serviceData = [
   {
-    Icon: RxCrop,
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Icon: RxRocket,
+    title: "Product Strategy",
+    description: "Helping founders clarify and structure digital products.",
   },
   {
     Icon: RxPencil2,
-    title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "MVP & Prototyping",
+    description: "Fast, user-focused MVPs and product iterations.",
   },
   {
     Icon: RxDesktop,
-    title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Web Platforms",
+    description: "Modern websites & digital experiences (Next.js, no-code).",
   },
   {
-    Icon: RxReader,
-    title: "Copywriting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Icon: RxMixerHorizontal,
+    title: "AI & Automation",
+    description: "Smart workflows and internal tools powered by AI.",
   },
   {
-    Icon: RxRocket,
-    title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    Icon: RxMagnifyingGlass,
+    title: "SEO Strategy",
+    description: "Simple, clear, and highly effective SEO roadmaps.",
+  },
+  {
+    Icon: RxBarChart,
+    title: "Ads Performance",
+    description: "High-performing growth campaigns on Meta, Google & Amazon.",
   },
 ];
 

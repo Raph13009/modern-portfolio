@@ -10,24 +10,24 @@ import "swiper/css/pagination";
 const testimonialData = [
   {
     image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
+    name: "Nicolas",
+    position: "CEO @ Musicklinks",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Raphaël delivered a clean and fully functional MVP. Thanks to this first version of the product with solid UX we were able to raise €60,000.",
   },
   {
     image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
+    name: "Sophie",
+    position: "Head of Accounting @ Codig",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Raphaël built a custom AI-powered OCR tool that transformed our workflow. What used to take hours now takes a single second.",
   },
   {
     image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
+    name: "Lydia",
+    position: "Language Teacher",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Thanks Raphaël! The platform is exactly what I needed: simple, fast, and super clear to use.",
   },
 ];
 
