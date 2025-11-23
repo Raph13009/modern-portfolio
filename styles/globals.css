@@ -19,8 +19,14 @@
 }
 
 @layer base {
+  html {
+    @apply h-full overflow-hidden;
+  }
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    @apply h-full bg-secondary overflow-hidden leading-relaxed;
+  }
+  #__next {
+    @apply h-full overflow-hidden;
   }
   .page {
     @apply w-full h-screen overflow-hidden;
