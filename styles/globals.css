@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent all scrolling - global fix */
+html {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#__next {
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
+}
+
 .translate-z-0 {
   transform: translateZ(0px);
 }
@@ -20,16 +41,28 @@
 
 @layer base {
   html {
-    @apply h-full overflow-hidden;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
   body {
-    @apply h-full bg-secondary overflow-hidden leading-relaxed;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    @apply bg-secondary leading-relaxed;
   }
   #__next {
-    @apply h-full overflow-hidden;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
   }
   .page {
-    @apply w-full h-screen overflow-hidden;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
   }
   .h1 {
     @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;
