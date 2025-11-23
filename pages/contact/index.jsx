@@ -5,7 +5,7 @@ import { fadeIn } from "../../variants";
 
 const Contact = () => {
   const email = "raphaellevy027@gmail.com";
-  const phone = "+33702617329";
+  const phone = "+33602617329";
 
   return (
     <div className="h-full bg-primary/30">
