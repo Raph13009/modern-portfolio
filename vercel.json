@@ -1,11 +1,6 @@
 {
-  "buildCommand": null,
+  "buildCommand": "echo 'No build needed'",
   "outputDirectory": ".",
   "framework": null,
-  "rewrites": [
-    {
-      "source": "/((?!assets|favicon\\.ico).*)",
-      "destination": "/index.html"
-    }
-  ]
+  "installCommand": null
 }
