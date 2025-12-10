@@ -148,6 +148,18 @@ projectImages.forEach((img) => {
   });
 });
 
+// prevent anchor default and open modal when clicking anywhere on project card
+const projectLinks = document.querySelectorAll(".project-item a");
+projectLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const img = link.querySelector("img");
+    if (img) {
+      openProjectModal(img.src, img.alt);
+    }
+  });
+});
+
 projectModalOverlay?.addEventListener("click", closeProjectModal);
 projectModalClose?.addEventListener("click", closeProjectModal);
 
