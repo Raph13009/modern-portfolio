@@ -120,6 +120,43 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
+// project image modal (lightbox)
+const projectImages = document.querySelectorAll(".project-img img");
+const projectModal = document.querySelector("[data-project-modal]");
+const projectModalImg = document.querySelector("[data-project-modal-img]");
+const projectModalOverlay = document.querySelector("[data-project-overlay]");
+const projectModalClose = document.querySelector("[data-project-close]");
+
+const openProjectModal = (src, alt) => {
+  projectModalImg.src = src;
+  projectModalImg.alt = alt || "";
+  projectModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+const closeProjectModal = () => {
+  projectModal.classList.remove("active");
+  projectModalImg.src = "";
+  projectModalImg.alt = "";
+  document.body.style.overflow = "";
+};
+
+projectImages.forEach((img) => {
+  img.addEventListener("click", (event) => {
+    event.preventDefault();
+    openProjectModal(img.src, img.alt);
+  });
+});
+
+projectModalOverlay?.addEventListener("click", closeProjectModal);
+projectModalClose?.addEventListener("click", closeProjectModal);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && projectModal.classList.contains("active")) {
+    closeProjectModal();
+  }
+});
+
 
 // contact form variables
 const form = document.querySelector("[data-form]");
