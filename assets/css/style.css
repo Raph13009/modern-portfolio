@@ -993,6 +993,12 @@ main {
   margin-left: 12px;
 }
 
+@media (max-width: 449px) {
+  .clients-item-mytable {
+    margin-left: 22px;
+  }
+}
+
 .clients-item a {
   display: flex;
   align-items: center;
