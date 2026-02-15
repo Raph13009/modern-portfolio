@@ -14,6 +14,57 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+// phone reveal anti-scraping
+const phoneRevealLink = document.querySelector("[data-phone-reveal]");
+const humanModal = document.querySelector("[data-human-modal]");
+const humanOverlay = document.querySelector("[data-human-overlay]");
+const humanClose = document.querySelector("[data-human-close]");
+const humanCancel = document.querySelector("[data-human-cancel]");
+const humanConfirm = document.querySelector("[data-human-confirm]");
+
+const openHumanModal = function () {
+  humanModal?.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+const closeHumanModal = function () {
+  humanModal?.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+const revealPhone = function () {
+  if (!phoneRevealLink) return;
+
+  const cc = phoneRevealLink.dataset.phoneCc;
+  const part1 = phoneRevealLink.dataset.phonePart1;
+  const part2 = phoneRevealLink.dataset.phonePart2;
+  const part3 = phoneRevealLink.dataset.phonePart3;
+  const part4 = phoneRevealLink.dataset.phonePart4;
+  const part5 = phoneRevealLink.dataset.phonePart5;
+
+  const dial = `+${cc}${part1}${part2}${part3}${part4}${part5}`;
+  const display = `+${cc} ${part1} ${part2} ${part3} ${part4} ${part5}`;
+
+  phoneRevealLink.textContent = display;
+  phoneRevealLink.href = `tel:${dial}`;
+  phoneRevealLink.classList.remove("is-blurred");
+  phoneRevealLink.dataset.revealed = "true";
+}
+
+phoneRevealLink?.addEventListener("click", function (e) {
+  if (phoneRevealLink.dataset.revealed === "true") return;
+  e.preventDefault();
+  openHumanModal();
+});
+
+humanOverlay?.addEventListener("click", closeHumanModal);
+humanClose?.addEventListener("click", closeHumanModal);
+humanCancel?.addEventListener("click", closeHumanModal);
+humanConfirm?.addEventListener("click", function () {
+  revealPhone();
+  closeHumanModal();
+});
+
 
 
 // testimonials variables
@@ -120,16 +171,29 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
-// project image modal (lightbox)
-const projectImages = document.querySelectorAll(".project-img img");
+// project preview modal
 const projectModal = document.querySelector("[data-project-modal]");
 const projectModalImg = document.querySelector("[data-project-modal-img]");
+const projectModalTitle = document.querySelector("[data-project-modal-title]");
+const projectModalCategory = document.querySelector("[data-project-modal-category]");
+const projectModalCta = document.querySelector("[data-project-modal-cta]");
 const projectModalOverlay = document.querySelector("[data-project-overlay]");
 const projectModalClose = document.querySelector("[data-project-close]");
 
-const openProjectModal = (src, alt) => {
+const openProjectModal = ({ src, alt, title, category, projectUrl }) => {
   projectModalImg.src = src;
   projectModalImg.alt = alt || "";
+  projectModalTitle.textContent = title || alt || "Project";
+  projectModalCategory.textContent = category || "";
+
+  if (projectUrl) {
+    projectModalCta.href = projectUrl;
+    projectModalCta.classList.remove("is-hidden");
+  } else {
+    projectModalCta.removeAttribute("href");
+    projectModalCta.classList.add("is-hidden");
+  }
+
   projectModal.classList.add("active");
   document.body.style.overflow = "hidden";
 };
@@ -138,15 +202,12 @@ const closeProjectModal = () => {
   projectModal.classList.remove("active");
   projectModalImg.src = "";
   projectModalImg.alt = "";
+  projectModalTitle.textContent = "";
+  projectModalCategory.textContent = "";
+  projectModalCta.removeAttribute("href");
+  projectModalCta.classList.add("is-hidden");
   document.body.style.overflow = "";
 };
-
-projectImages.forEach((img) => {
-  img.addEventListener("click", (event) => {
-    event.preventDefault();
-    openProjectModal(img.src, img.alt);
-  });
-});
 
 // prevent anchor default and open modal when clicking anywhere on project card
 const projectLinks = document.querySelectorAll(".project-item a");
@@ -154,8 +215,17 @@ projectLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     const img = link.querySelector("img");
+    const title = link.querySelector(".project-title");
+    const category = link.querySelector(".project-category");
+
     if (img) {
-      openProjectModal(img.src, img.alt);
+      openProjectModal({
+        src: img.src,
+        alt: img.alt,
+        title: title?.textContent?.trim(),
+        category: category?.textContent?.trim(),
+        projectUrl: link.dataset.projectUrl
+      });
     }
   });
 });

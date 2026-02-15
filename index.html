@@ -91,7 +91,18 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+33602617329" class="contact-link">+33 6 02 61 73 29</a>
+              <a
+                href="#"
+                class="contact-link phone-lock is-blurred"
+                data-phone-reveal
+                data-phone-cc="33"
+                data-phone-part1="6"
+                data-phone-part2="02"
+                data-phone-part3="61"
+                data-phone-part4="73"
+                data-phone-part5="29"
+                aria-label="Reveal phone number"
+              >+33 •• •• •• •• ••</a>
             </div>
 
           </li>
@@ -444,6 +455,18 @@
 
             <li class="clients-item">
               <a href="#">
+                <img src="/assets/images/clients/koacher-logo.png" alt="KOACHER logo">
+              </a>
+            </li>
+
+            <li class="clients-item clients-item-mytable">
+              <a href="#">
+                <img src="/assets/images/clients/Mytable-logo.jpeg" alt="Mytable logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
                 <img src="/assets/images/clients/Kvaia.png" alt="Kvaia logo">
               </a>
             </li>
@@ -775,6 +798,78 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="product development">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/project/8">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/assets/images/koacher-b2b-1 copy.webp" alt="Koacher" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Koacher</h3>
+
+                <p class="project-category">Product Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="product development">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/project/9">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/assets/images/mytable.webp" alt="Mytable" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Mytable</h3>
+
+                <p class="project-category">Product Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="product development">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/project/2">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/assets/images/project-3.png" alt="MusicLinks" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MusicLinks</h3>
+
+                <p class="project-category">Product Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="product development">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/project/6">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="/assets/images/kivaiakids.png" alt="Kivaikids" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Kivaikids</h3>
+
+                <p class="project-category">Product Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="product development">
               <a href="#">
 
                 <figure class="project-img">
@@ -811,25 +906,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="product development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="/assets/images/project-3.png" alt="MusicLinks" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MusicLinks</h3>
-
-                <p class="project-category">Product Development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="product development">
-              <a href="#">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/project/1">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -847,7 +924,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="ai & automation">
-              <a href="#">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/agent/1">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -865,7 +942,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="ai & automation">
-              <a href="#">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/agent/2">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -883,7 +960,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="ai & automation">
-              <a href="#">
+              <a href="#" data-project-url="https://www.boostaiconsulting.com/agent/3">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -981,6 +1058,35 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <img src="" alt="" data-project-modal-img>
+      <div class="project-modal-body">
+        <div class="project-modal-meta">
+          <p class="project-modal-category" data-project-modal-category></p>
+          <h3 class="project-modal-title" data-project-modal-title></h3>
+        </div>
+        <a class="project-modal-cta" data-project-modal-cta target="_blank" rel="noopener noreferrer">
+          Voir la page du projet
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    - phone reveal modal
+  -->
+  <div class="human-check-modal" data-human-modal>
+    <div class="human-check-overlay" data-human-overlay></div>
+    <div class="human-check-content">
+      <button class="human-check-close" data-human-close aria-label="Close verification">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <p class="human-check-kicker">Quick verification</p>
+      <h3 class="human-check-title">Are you human?</h3>
+      <p class="human-check-text">Click below to reveal the phone number.</p>
+      <p class="human-check-text">This check helps prevent phone-number scraping.</p>
+      <div class="human-check-actions">
+        <button class="human-check-btn secondary" type="button" data-human-cancel>No</button>
+        <button class="human-check-btn primary" type="button" data-human-confirm>Yes, show it</button>
+      </div>
     </div>
   </div>
 
