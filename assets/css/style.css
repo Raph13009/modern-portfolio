@@ -995,7 +995,7 @@ main {
 
 @media (max-width: 449px) {
   .clients-item-mytable {
-    margin-left: 22px;
+    margin-left: 80px !important;
   }
 }
 
